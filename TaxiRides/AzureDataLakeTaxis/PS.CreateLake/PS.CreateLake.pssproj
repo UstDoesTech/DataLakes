@@ -34,9 +34,6 @@
     <Compile Include="1-1-4-CreateCuratedFolder.ps1" />
     <Compile Include="1-1-5-CreateLaboratoryFolder.ps1" />
     <Compile Include="1-2-CreateDataLakeAnalytics.ps1" />
-    <Compile Include="PS.CreateLake.psd1" />
-    <Compile Include="PS.CreateLake.psm1" />
-    <Compile Include="PS.CreateLake.tests.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
