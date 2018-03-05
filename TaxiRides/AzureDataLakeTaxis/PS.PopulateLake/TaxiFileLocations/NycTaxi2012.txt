@@ -1,0 +1,12 @@
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-01.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-02.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-03.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-04.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-05.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-06.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-07.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-08.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-09.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-10.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-11.csv
+https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2012-12.csv
