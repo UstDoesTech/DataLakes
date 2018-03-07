@@ -1,0 +1,61 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>aedfff27-a552-47e8-96c2-1885921fd3d4</ProjectGuid>
+    <OutputType>File</OutputType>
+    <AssemblyName>Algebra.xml</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Name>USQL.TaxiDemo</Name>
+    <RootNamespace>USQL.TaxiDemo</RootNamespace>
+    <RuntimeVersion>default</RuntimeVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Script Include="Taxi-4-0-CreateDateDimension.usql" />
+    <Script Include="Taxis-4-1-1-FileSetsWithoutPE.usql" />
+    <Script Include="Taxis-4-1-2-FileSetsWithPE.usql" />
+    <Script Include="Taxis-4-2-CreatePartitionedTable.usql" />
+    <Script Include="Taxis-4-3-InsertIntoPartitionedTable.usql" />
+    <Script Include="Taxis-4-4-QueryPartitionedTable.usql" />
+    <Script Include="Taxis-4-5-CreateDistributedTable.usql" />
+    <Script Include="Taxis-4-6-InsertDistributedTable.usql" />
+    <Script Include="Taxis-4-7-QueryDistributedTable.usql" />
+    <ScriptCode Include="Taxi-4-0-CreateDateDimension.usql.cs">
+      <DependentUpon>Taxi-4-0-CreateDateDimension.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Taxis-4-1-1-FileSetsWithoutPE.usql.cs">
+      <DependentUpon>Taxis-4-1-1-FileSetsWithoutPE.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Taxis-4-1-2-FileSetsWithPE.usql.cs">
+      <DependentUpon>Taxis-4-1-2-FileSetsWithPE.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Taxis-4-2-CreatePartitionedTable.usql.cs">
+      <DependentUpon>Taxis-4-2-CreatePartitionedTable.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Taxis-4-3-InsertIntoPartitionedTable.usql.cs">
+      <DependentUpon>Taxis-4-3-InsertIntoPartitionedTable.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Taxis-4-4-QueryPartitionedTable.usql.cs">
+      <DependentUpon>Taxis-4-4-QueryPartitionedTable.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Taxis-4-5-CreateDistributedTable.usql.cs">
+      <DependentUpon>Taxis-4-5-CreateDistributedTable.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Taxis-4-6-InsertDistributedTable.usql.cs">
+      <DependentUpon>Taxis-4-6-InsertDistributedTable.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Taxis-4-7-QueryDistributedTable.usql.cs">
+      <DependentUpon>Taxis-4-7-QueryDistributedTable.usql</DependentUpon>
+    </ScriptCode>
+  </ItemGroup>
+  <Import Project="$(AppData)\Microsoft\DataLake\MsBuild\1.0\Usql.targets" />
+</Project>

@@ -1,28 +1,65 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "PS.CreateLake", "PS.CreateLake\PS.CreateLake.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "PS.PopulateLake", "PS.PopulateLake\PS.PopulateLake.pssproj", "{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}"
 EndProject
+Project("{182E2583-ECAD-465B-BB50-91101D7C24CE}") = "USQL.TaxiDemo", "USQL.TaxiDemo\USQL.TaxiDemo.usqlproj", "{AEDFFF27-A552-47E8-96C2-1885921FD3D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|x64.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|x86.Build.0 = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|x64.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|x64.Build.0 = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|x86.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|x86.Build.0 = Release|Any CPU
 		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Debug|x86.Build.0 = Debug|Any CPU
 		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Release|x64.ActiveCfg = Release|Any CPU
+		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Release|x64.Build.0 = Release|Any CPU
+		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{9B37BDB8-5BEF-4862-B99F-3FA65EF232B5}.Release|x86.Build.0 = Release|Any CPU
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Debug|x64.ActiveCfg = Debug|x64
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Debug|x64.Build.0 = Debug|x64
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Debug|x86.ActiveCfg = Debug|x86
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Debug|x86.Build.0 = Debug|x86
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Release|x64.ActiveCfg = Release|x64
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Release|x64.Build.0 = Release|x64
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Release|x86.ActiveCfg = Release|x86
+		{AEDFFF27-A552-47E8-96C2-1885921FD3D4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67BC9143-8756-4B8B-831B-CCF0B38E6477}
 	EndGlobalSection
 EndGlobal

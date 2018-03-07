@@ -1,0 +1,60 @@
+﻿@Green =
+	    EXTRACT VendorID     					int?
+     			,lpep_pickup_DateTime        	string
+ 			    ,lpep_dropoff_DateTime        	string
+     			,Store_and_fwd_flag				string
+	 			,RateCodeID 					int?
+	 			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+                ,Ehail_fee                      decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Total_amount					decimal?
+                ,Payment_type					int?
+                ,Trip_type                      int?
+	 			,date                           DateTime?
+	    FROM "/RAW/OPEN/NEW_YORK_TAXIS/{date:yyyy}/{date:MM}/green_{*}.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+
+
+@WithPE = 
+        SELECT 
+                VendorID     			
+                ,lpep_pickup_DateTime   
+                ,lpep_dropoff_DateTime  
+                ,Store_and_fwd_flag		
+                ,RateCodeID 			
+                ,Pickup_longitude       
+                ,Pickup_latitude 		
+                ,Dropoff_longitude		
+                ,Dropoff_latitude		
+                ,Passenger_count 	 	
+                ,Trip_distance 		    
+                ,Fare_amount			
+                ,Extra					
+                ,MTA_tax				
+                ,Tip_amount				
+                ,Tolls_amount			
+                ,Ehail_fee              
+                ,Improvement_surcharge	
+                ,Total_amount			
+                ,Payment_type			
+                ,Trip_type              
+                ,date                   
+        FROM @Green
+        WHERE date == DateTime.Parse("2016-01-01");
+        //;
+
+OUTPUT @WithPE
+TO "/ENRICHED/TaxiAnalysis/FileSetsWithPE.csv"
+USING Outputters.Csv();
+         

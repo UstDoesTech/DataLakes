@@ -1,0 +1,40 @@
+﻿CREATE DATABASE IF NOT EXISTS Enriched;
+
+USE DATABASE Enriched;
+
+CREATE SCHEMA IF NOT EXISTS TaxiAnalysis;
+
+DROP TABLE IF EXISTS TaxiAnalysis.PartitionedGreenTaxiTrip;
+CREATE TABLE TaxiAnalysis.PartitionedGreenTaxiTrip
+(
+                 VendorID     					int?
+     			,lpep_pickup_DateTime        	string
+ 			    ,lpep_dropoff_DateTime        	string
+     			,Store_and_fwd_flag				string
+	 			,RateCodeID 					int?
+	 			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+                ,Ehail_fee                      decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Total_amount					decimal?
+                ,Payment_type					int?
+                ,Trip_type                      int?
+	 			,date                           DateTime?
+                ,DateKey                        int
+                ,CalendarMonth                  int
+    ,INDEX clx_vendorid_paymenttype_passengercount CLUSTERED(VendorID, Payment_type, Passenger_count ASC)
+    PARTITIONED BY (CalendarMonth)
+    DISTRIBUTED BY ROUND ROBIN 
+    INTO 8
+);
+
+

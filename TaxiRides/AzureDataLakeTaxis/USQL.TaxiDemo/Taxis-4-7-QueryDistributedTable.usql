@@ -1,0 +1,11 @@
+﻿USE DATABASE Enriched;
+
+@TotalAmountByDate = 
+    SELECT DateKey, SUM(Total_amount) AS TotalAmount
+    FROM TaxiAnalysis.DistributedGreenTaxiTrip
+    //WHERE CalendarMonth == 201601
+    GROUP BY DateKey;  
+
+OUTPUT @TotalAmountByDate
+TO "/CURATED/TaxiAnalysis/TotalAmountByAllDates.csv"
+USING Outputters.Csv();
