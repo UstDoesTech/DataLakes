@@ -22,15 +22,3 @@ https://s3.amazonaws.com/nyc-tlc/trip+data/green_tripdata_2014-09.csv
 https://s3.amazonaws.com/nyc-tlc/trip+data/green_tripdata_2014-10.csv
 https://s3.amazonaws.com/nyc-tlc/trip+data/green_tripdata_2014-11.csv
 https://s3.amazonaws.com/nyc-tlc/trip+data/green_tripdata_2014-12.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-01.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-02.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-03.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-04.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-05.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-06.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-07.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-08.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-09.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-10.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-11.csv
-https://s3.amazonaws.com/nyc-tlc/trip+data/fhv_tripdata_2014-12.csv
