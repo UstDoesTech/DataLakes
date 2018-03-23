@@ -1,0 +1,280 @@
+﻿USE Curated;
+
+DECLARE @Partition1 int = 200901;
+DECLARE @Partition2 int = 200902;
+DECLARE @Partition3 int = 200903;
+DECLARE @Partition4 int = 200904;
+DECLARE @Partition5 int = 200905;
+DECLARE @Partition6 int = 200906;
+DECLARE @Partition7 int = 200907;
+DECLARE @Partition8 int = 200908;
+DECLARE @Partition9 int = 200909;
+DECLARE @Partition10 int = 200910;
+DECLARE @Partition11 int = 200911;
+DECLARE @Partition12 int = 200912;
+DECLARE @Partition13 int = 201001;
+DECLARE @Partition14 int = 201002;
+DECLARE @Partition15 int = 201003;
+DECLARE @Partition16 int = 201004;
+DECLARE @Partition17 int = 201005;
+DECLARE @Partition18 int = 201006;
+DECLARE @Partition19 int = 201007;
+DECLARE @Partition20 int = 201008;
+DECLARE @Partition21 int = 201009;
+DECLARE @Partition22 int = 201010;
+DECLARE @Partition23 int = 201011;
+DECLARE @Partition24 int = 201012;
+DECLARE @Partition25 int = 201101;
+DECLARE @Partition26 int = 201102;
+DECLARE @Partition27 int = 201103;
+DECLARE @Partition28 int = 201104;
+DECLARE @Partition29 int = 201105;
+DECLARE @Partition30 int = 201106;
+DECLARE @Partition31 int = 201107;
+DECLARE @Partition32 int = 201108;
+DECLARE @Partition33 int = 201109;
+DECLARE @Partition34 int = 201110;
+DECLARE @Partition35 int = 201111;
+DECLARE @Partition36 int = 201112;
+DECLARE @Partition37 int = 201201;
+DECLARE @Partition38 int = 201202;
+DECLARE @Partition39 int = 201203;
+DECLARE @Partition40 int = 201204;
+DECLARE @Partition41 int = 201205;
+DECLARE @Partition42 int = 201206;
+DECLARE @Partition43 int = 201207;
+DECLARE @Partition44 int = 201208;
+DECLARE @Partition45 int = 201209;
+DECLARE @Partition46 int = 201210;
+DECLARE @Partition47 int = 201211;
+DECLARE @Partition48 int = 201212;
+DECLARE @Partition49 int = 201301;
+DECLARE @Partition50 int = 201302;
+DECLARE @Partition51 int = 201303;
+DECLARE @Partition52 int = 201304;
+DECLARE @Partition53 int = 201305;
+DECLARE @Partition54 int = 201306;
+DECLARE @Partition55 int = 201307;
+DECLARE @Partition56 int = 201308;
+DECLARE @Partition57 int = 201309;
+DECLARE @Partition58 int = 201310;
+DECLARE @Partition59 int = 201311;
+DECLARE @Partition60 int = 201312;
+DECLARE @Partition61 int = 201401;
+DECLARE @Partition62 int = 201402;
+DECLARE @Partition63 int = 201403;
+DECLARE @Partition64 int = 201404;
+DECLARE @Partition65 int = 201405;
+DECLARE @Partition66 int = 201406;
+DECLARE @Partition67 int = 201407;
+DECLARE @Partition68 int = 201408;
+DECLARE @Partition69 int = 201409;
+DECLARE @Partition70 int = 201410;
+DECLARE @Partition71 int = 201411;
+DECLARE @Partition72 int = 201412;
+DECLARE @Partition73 int = 201501;
+DECLARE @Partition74 int = 201502;
+DECLARE @Partition75 int = 201503;
+DECLARE @Partition76 int = 201504;
+DECLARE @Partition77 int = 201505;
+DECLARE @Partition78 int = 201506;
+DECLARE @Partition79 int = 201507;
+DECLARE @Partition80 int = 201508;
+DECLARE @Partition81 int = 201509;
+DECLARE @Partition82 int = 201510;
+DECLARE @Partition83 int = 201511;
+DECLARE @Partition84 int = 201512;
+DECLARE @Partition85 int = 201601;
+DECLARE @Partition86 int = 201602;
+DECLARE @Partition87 int = 201603;
+DECLARE @Partition88 int = 201604;
+DECLARE @Partition89 int = 201605;
+DECLARE @Partition90 int = 201606;
+
+ALTER TABLE Fct.TaxiTrip
+    ADD IF NOT EXISTS PARTITION( @Partition1)
+                     ,PARTITION( @Partition2)  
+                     ,PARTITION( @Partition3) 
+                     ,PARTITION( @Partition4) 
+                     ,PARTITION( @Partition5) 
+                     ,PARTITION( @Partition6) 
+                     ,PARTITION( @Partition7) 
+                     ,PARTITION( @Partition8) 
+                     ,PARTITION( @Partition9) 
+                     ,PARTITION( @Partition10)
+                     ,PARTITION( @Partition11)
+                     ,PARTITION( @Partition12)
+                     ,PARTITION( @Partition13)
+                     ,PARTITION( @Partition14)
+                     ,PARTITION( @Partition15)
+                     ,PARTITION( @Partition16)
+                     ,PARTITION( @Partition17)
+                     ,PARTITION( @Partition18)
+                     ,PARTITION( @Partition19)
+                     ,PARTITION( @Partition20)
+                     ,PARTITION( @Partition21)
+                     ,PARTITION( @Partition22)
+                     ,PARTITION( @Partition23)
+                     ,PARTITION( @Partition24)
+                     ,PARTITION( @Partition25)
+                     ,PARTITION( @Partition26)
+                     ,PARTITION( @Partition27)
+                     ,PARTITION( @Partition28)
+                     ,PARTITION( @Partition29)
+                     ,PARTITION( @Partition30)
+                     ,PARTITION( @Partition31)
+                     ,PARTITION( @Partition32)
+                     ,PARTITION( @Partition33)
+                     ,PARTITION( @Partition34)
+                     ,PARTITION( @Partition35)
+                     ,PARTITION( @Partition36)
+                     ,PARTITION( @Partition37)
+                     ,PARTITION( @Partition38)
+                     ,PARTITION( @Partition39)
+                     ,PARTITION( @Partition40)
+                     ,PARTITION( @Partition41)
+                     ,PARTITION( @Partition42)
+                     ,PARTITION( @Partition43)
+                     ,PARTITION( @Partition44)
+                     ,PARTITION( @Partition45)
+                     ,PARTITION( @Partition46)
+                     ,PARTITION( @Partition47)
+                     ,PARTITION( @Partition48)
+                     ,PARTITION( @Partition49)
+                     ,PARTITION( @Partition50)
+                     ,PARTITION( @Partition51)
+                     ,PARTITION( @Partition52)
+                     ,PARTITION( @Partition53)
+                     ,PARTITION( @Partition54)
+                     ,PARTITION( @Partition55)
+                     ,PARTITION( @Partition56)
+                     ,PARTITION( @Partition57)
+                     ,PARTITION( @Partition58)
+                     ,PARTITION( @Partition59)
+                     ,PARTITION( @Partition60)
+                     ,PARTITION( @Partition61)
+                     ,PARTITION( @Partition62)
+                     ,PARTITION( @Partition63)
+                     ,PARTITION( @Partition64)
+                     ,PARTITION( @Partition65)
+                     ,PARTITION( @Partition66)
+                     ,PARTITION( @Partition67)
+                     ,PARTITION( @Partition68)
+                     ,PARTITION( @Partition69)
+                     ,PARTITION( @Partition70)
+                     ,PARTITION( @Partition71)
+                     ,PARTITION( @Partition72)
+                     ,PARTITION( @Partition73)
+                     ,PARTITION( @Partition74)
+                     ,PARTITION( @Partition75)
+                     ,PARTITION( @Partition76)
+                     ,PARTITION( @Partition77)
+                     ,PARTITION( @Partition78)
+                     ,PARTITION( @Partition79)
+                     ,PARTITION( @Partition80)
+                     ,PARTITION( @Partition81)
+                     ,PARTITION( @Partition82)
+                     ,PARTITION( @Partition83)
+                     ,PARTITION( @Partition84)
+                     ,PARTITION( @Partition85)
+                     ,PARTITION( @Partition86)
+                     ,PARTITION( @Partition87)
+                     ,PARTITION( @Partition88)
+                     ,PARTITION( @Partition89)
+                     ,PARTITION( @Partition90);
+
+@YellowTaxis =
+EXTRACT 
+           vendor_id            int?
+           ,pickup_datetime     DateTime?
+           ,dropoff_datetime    DateTime?
+           ,passenger_count     int?
+           ,trip_distance       decimal?
+           ,pickup_longitude    float?
+           ,pickup_latitude     float?
+           ,rate_code           int?
+           ,store_and_fwd_flag  string
+           ,dropoff_longitude   float?
+           ,dropoff_latitude    float?
+           ,payment_type        int?
+           ,fare_amount         decimal?
+           ,surcharge           decimal?
+           ,mta_tax             decimal?
+           ,tip_amount          decimal?
+           ,tolls_amount        decimal?
+           ,total_amount        decimal?
+           ,DateKey             string
+FROM "/Enriched/AllTaxis/YellowTaxisAllYears.csv"
+USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Table = 
+
+SELECT      vendor_id
+           ,pickup_datetime
+           ,dropoff_datetime
+           ,passenger_count
+           ,trip_distance
+           ,pickup_longitude
+           ,pickup_latitude
+           ,rate_code
+           ,store_and_fwd_flag
+           ,dropoff_longitude
+           ,dropoff_latitude
+           ,payment_type
+           ,fare_amount
+           ,surcharge
+           ,mta_tax
+           ,tip_amount
+           ,tolls_amount
+           ,total_amount
+           ,Int32.Parse(DateKey) AS DateKey
+           ,Int32.Parse(DateKey.Substring(0,6)) AS CalendarMonth
+FROM @YellowTaxis;
+
+INSERT INTO Fct.TaxiTrip
+    (
+         vendor_id                       
+        ,pickup_datetime                 
+        ,dropoff_datetime                
+        ,passenger_count                 
+        ,trip_distance                   
+        ,pickup_longitude                
+        ,pickup_latitude                 
+        ,rate_code                       
+        ,store_and_fwd_flag              
+        ,dropoff_longitude               
+        ,dropoff_latitude                
+        ,payment_type                    
+        ,fare_amount                     
+        ,surcharge                       
+        ,mta_tax                         
+        ,tip_amount                      
+        ,tolls_amount                    
+        ,total_amount                    
+        ,DateKey                         
+        ,CalendarMonth 
+    )
+ON INTEGRITY VIOLATION IGNORE
+SELECT
+         vendor_id                       
+        ,pickup_datetime                 
+        ,dropoff_datetime                
+        ,passenger_count                 
+        ,trip_distance                   
+        ,pickup_longitude                
+        ,pickup_latitude                 
+        ,rate_code                       
+        ,store_and_fwd_flag              
+        ,dropoff_longitude               
+        ,dropoff_latitude                
+        ,payment_type                    
+        ,fare_amount                     
+        ,surcharge                       
+        ,mta_tax                         
+        ,tip_amount                      
+        ,tolls_amount                    
+        ,total_amount                    
+        ,DateKey                         
+        ,CalendarMonth 
+
+FROM @Table;

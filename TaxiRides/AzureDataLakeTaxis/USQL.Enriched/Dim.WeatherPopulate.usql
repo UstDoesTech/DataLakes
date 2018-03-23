@@ -1,0 +1,41 @@
+﻿USE DATABASE Curated;
+
+@Weather = 
+        EXTRACT
+             Station       string
+            ,Station_Name  string
+            ,Date          int
+            ,Precipitation int?
+            ,Swnd          int?
+            ,Snow          int?
+            ,MaxTemp       int?
+            ,MinTemp       int?
+            ,Awnd          int?
+       FROM "/Raw/Taxis/central_park_weather.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+INSERT INTO Dim.Weather
+        (
+             Station        
+            ,Station_Name   
+            ,Date           
+            ,Precipitation  
+            ,Swnd           
+            ,Snow           
+            ,MaxTemp        
+            ,MinTemp        
+            ,Awnd   
+        )
+SELECT       Station        
+            ,Station_Name   
+            ,Date           
+            ,Precipitation  
+            ,Swnd           
+            ,Snow           
+            ,MaxTemp        
+            ,MinTemp        
+            ,Awnd   
+FROM  @Weather;             
+             
+             
+         

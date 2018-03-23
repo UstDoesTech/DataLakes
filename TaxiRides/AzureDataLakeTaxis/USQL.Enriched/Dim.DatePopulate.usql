@@ -1,0 +1,50 @@
+﻿
+USE DATABASE Curated;
+
+
+@Dates = 
+    EXTRACT  DateKey        int?
+            ,Date           DateTime?
+            ,DateString     string
+            ,Day            int?
+            ,Month          int?
+            ,Quarter        int?
+            ,Year           int?
+            ,DayOfWeekNo    int?
+            ,DayName        string
+            ,MonthName      string
+            ,FinancialYear  string
+            ,WeekNoOfYear   int?
+    FROM "/Enriched/DateDimension.csv"
+    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+INSERT INTO Dim.Date
+        (
+             DateKey        
+            ,Date           
+            ,DateString     
+            ,Day            
+            ,Month          
+            ,Quarter        
+            ,Year           
+            ,DayOfWeekNo    
+            ,DayName        
+            ,MonthName      
+            ,FinancialYear  
+            ,WeekNoOfYear   
+    )
+SELECT       DateKey        
+            ,Date           
+            ,DateString     
+            ,Day            
+            ,Month          
+            ,Quarter        
+            ,Year           
+            ,DayOfWeekNo    
+            ,DayName        
+            ,MonthName      
+            ,FinancialYear  
+            ,WeekNoOfYear   
+FROM        @Dates;
+    
+    
