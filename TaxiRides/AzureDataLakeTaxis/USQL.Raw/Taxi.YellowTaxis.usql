@@ -1,0 +1,305 @@
+﻿@Y01 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-01.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y02 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-02.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y03 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-03.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y04 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-04.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y05 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-05.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y06 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-06.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y07 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-07.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y08 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-08.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y09 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-09.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y10 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-10.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y11 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-11.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+		
+@Y12 =
+	    EXTRACT VendorID     					int?
+     			,tpep_pickup_DateTime        	DateTime?
+ 			    ,tpep_dropoff_DateTime        	DateTime?
+     			,Passenger_count 	 	        int?
+     			,Trip_distance 		       		decimal?
+     			,Pickup_longitude       		string
+	 			,Pickup_latitude 			    string
+     			,RateCodeID 					int?
+	 			,Store_and_fwd_flag				string
+	 			,Dropoff_longitude				string
+	 			,Dropoff_latitude				string
+	 			,Payment_type					int?
+	 			,Fare_amount					decimal?
+	 			,Extra							decimal?
+	 			,MTA_tax						decimal?
+	 			,Improvement_surcharge			decimal?
+	 			,Tip_amount						decimal?
+	 			,Tolls_amount					decimal?
+	 			,Total_amount					decimal?		
+	    FROM "/Raw/Taxis/2015/yellow_tripdata_2015-12.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@yellowoutput = 
+	SELECT * FROM @Y01
+	UNION ALL
+	SELECT * FROM @Y02
+	UNION ALL
+	SELECT * FROM @Y03
+	UNION ALL
+	SELECT * FROM @Y04
+	UNION ALL
+	SELECT * FROM @Y05
+	UNION ALL
+	SELECT * FROM @Y06
+	UNION ALL
+	SELECT * FROM @Y07
+	UNION ALL
+	SELECT * FROM @Y08
+	UNION ALL
+	SELECT * FROM @Y09
+	UNION ALL
+	SELECT * FROM @Y10
+	UNION ALL
+	SELECT * FROM @Y11
+	UNION ALL 
+	SELECT * FROM @Y12;
+
+	
+	OUTPUT @yellowoutput   
+	TO "/Raw/Test.csv"
+	USING Outputters.Csv();

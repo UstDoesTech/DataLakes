@@ -1,0 +1,779 @@
+﻿@Yellow2016 =
+         EXTRACT VendorID                       int?
+                ,tpep_pickup_DateTime           string
+                ,tpep_dropoff_DateTime          string
+                ,Passenger_count                int?
+                ,Trip_distance                  decimal?
+                ,Pickup_longitude               float?
+                ,Pickup_latitude                float?
+                ,RateCodeID                     int?
+                ,Store_and_fwd_flag             string
+                ,Dropoff_longitude              float?
+                ,Dropoff_latitude               float?
+                ,Payment_type                   int?
+                ,Fare_amount                    decimal?
+                ,Extra                          decimal?
+                ,MTA_tax                        decimal?
+                ,Improvement_surcharge          decimal?
+                ,Tip_amount                     decimal?
+                ,Tolls_amount                   decimal?
+                ,Total_amount                   decimal?
+                //,date                           DateTime?
+                //,filename                       string                    
+       FROM "/Raw/Taxis/2016/yellow_{*}.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Yellow2015 =
+         EXTRACT VendorID                       int?
+                ,tpep_pickup_DateTime           string
+                ,tpep_dropoff_DateTime          string
+                ,Passenger_count                int?
+                ,Trip_distance                  decimal?
+                ,Pickup_longitude               float?
+                ,Pickup_latitude                float?
+                ,RateCodeID                     int?
+                ,Store_and_fwd_flag             string
+                ,Dropoff_longitude              float?
+                ,Dropoff_latitude               float?
+                ,Payment_type                   int?
+                ,Fare_amount                    decimal?
+                ,Extra                          decimal?
+                ,MTA_tax                        decimal?
+                ,Improvement_surcharge          decimal?
+                ,Tip_amount                     decimal?
+                ,Tolls_amount                   decimal?
+                ,Total_amount                   decimal?
+                //,date                           DateTime?
+                //,filename                       string                    
+       FROM "/Raw/Taxis/2015/yellow_{*}.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Yellow2014 =
+         EXTRACT vendor_id                       int?
+                ,pickup_datetime                 string
+                ,dropoff_datetime                string
+                ,passenger_count                 int?
+                ,trip_distance                   decimal?
+                ,pickup_longitude                float?
+                ,pickup_latitude                 float?
+                ,rate_code                       int?
+                ,store_and_fwd_flag              string
+                ,dropoff_longitude               float?
+                ,dropoff_latitude                float?
+                ,payment_type                    int?
+                ,fare_amount                     decimal?
+                ,surcharge                       decimal?
+                ,mta_tax                         decimal?
+                ,tip_amount                      decimal?
+                ,tolls_amount                    decimal?
+                ,total_amount                    decimal?
+                //,date                           DateTime?
+                //,filename                       string                    
+       FROM "/Raw/Taxis/2014/yellow_{*}.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Yellow2013 =
+         EXTRACT vendor_id                       int?
+                ,pickup_datetime                 string
+                ,dropoff_datetime                string
+                ,passenger_count                 int?
+                ,trip_distance                   decimal?
+                ,pickup_longitude                float?
+                ,pickup_latitude                 float?
+                ,rate_code                       int?
+                ,store_and_fwd_flag              string
+                ,dropoff_longitude               float?
+                ,dropoff_latitude                float?
+                ,payment_type                    int?
+                ,fare_amount                     decimal?
+                ,surcharge                       decimal?
+                ,mta_tax                         decimal?
+                ,tip_amount                      decimal?
+                ,tolls_amount                    decimal?
+                ,total_amount                    decimal?
+                //,date                           DateTime?
+                //,filename                       string                    
+       FROM "/Raw/Taxis/2013/yellow_{*}.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Yellow2012 =
+         EXTRACT vendor_id                       int?
+                ,pickup_datetime                 string
+                ,dropoff_datetime                string
+                ,passenger_count                 int?
+                ,trip_distance                   decimal?
+                ,pickup_longitude                float?
+                ,pickup_latitude                 float?
+                ,rate_code                       int?
+                ,store_and_fwd_flag              string
+                ,dropoff_longitude               float?
+                ,dropoff_latitude                float?
+                ,payment_type                    int?
+                ,fare_amount                     decimal?
+                ,surcharge                       decimal?
+                ,mta_tax                         decimal?
+                ,tip_amount                      decimal?
+                ,tolls_amount                    decimal?
+                ,total_amount                    decimal?
+                //,date                           DateTime?
+                //,filename                       string                    
+       FROM "/Raw/Taxis/2012/yellow_{*}.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Yellow2011 =
+         EXTRACT vendor_id                       int?
+                ,pickup_datetime                 string
+                ,dropoff_datetime                string
+                ,passenger_count                 int?
+                ,trip_distance                   decimal?
+                ,pickup_longitude                float?
+                ,pickup_latitude                 float?
+                ,rate_code                       int?
+                ,store_and_fwd_flag              string
+                ,dropoff_longitude               float?
+                ,dropoff_latitude                float?
+                ,payment_type                    int?
+                ,fare_amount                     decimal?
+                ,surcharge                       decimal?
+                ,mta_tax                         decimal?
+                ,tip_amount                      decimal?
+                ,tolls_amount                    decimal?
+                ,total_amount                    decimal?
+                //,date                           DateTime?
+                //,filename                       string                    
+       FROM "/Raw/Taxis/2011/yellow_{*}.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Yellow2010 =
+         EXTRACT vendor_id                       int?
+                ,pickup_datetime                 string
+                ,dropoff_datetime                string
+                ,passenger_count                 int?
+                ,trip_distance                   decimal?
+                ,pickup_longitude                float?
+                ,pickup_latitude                 float?
+                ,rate_code                       int?
+                ,store_and_fwd_flag              string
+                ,dropoff_longitude               float?
+                ,dropoff_latitude                float?
+                ,payment_type                    int?
+                ,fare_amount                     decimal?
+                ,surcharge                       decimal?
+                ,mta_tax                         decimal?
+                ,tip_amount                      decimal?
+                ,tolls_amount                    decimal?
+                ,total_amount                    decimal?
+                //,date                           DateTime?
+                //,filename                       string                    
+       FROM "/Raw/Taxis/2010/yellow_{*}.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Yellow2009 =
+         EXTRACT vendor_id                       int?
+                ,pickup_datetime                 string
+                ,dropoff_datetime                string
+                ,passenger_count                 int?
+                ,trip_distance                   decimal?
+                ,pickup_longitude                float?
+                ,pickup_latitude                 float?
+                ,rate_code                       int?
+                ,store_and_fwd_flag              string
+                ,dropoff_longitude               float?
+                ,dropoff_latitude                float?
+                ,payment_type                    int?
+                ,fare_amount                     decimal?
+                ,surcharge                       decimal?
+                ,mta_tax                         decimal?
+                ,tip_amount                      decimal?
+                ,tolls_amount                    decimal?
+                ,total_amount                    decimal?
+                //,date                           DateTime?
+                //,filename                       string                    
+       FROM "/Raw/Taxis/2009/yellow_{*}.csv"
+       USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@Dates =
+    EXTRACT DateKey int?,
+            Date string,
+            DateString string,
+            Day int?,
+            Month int?,
+            Quater int?,
+            Year int?,
+            DayOfWeekNo int?,
+            DayName string,
+            MonthName string,
+            FinancialYear string,
+            WeekNoOfYear int?
+    FROM "/Enriched/DateDimension.csv"
+    USING Extractors.Csv(silent : true, skipFirstNRows : 1);
+
+@DatesPass1 =
+    SELECT DateKey ,
+            Date ,
+            DateString, 
+            Day ,
+            Month ,
+            Quater ,
+            Year ,
+            DayOfWeekNo ,
+            DayName ,
+            MonthName ,
+            FinancialYear ,
+            WeekNoOfYear ,
+            DateTime.Parse(Date).ToShortDateString() AS ShortDate1
+    FROM @Dates;
+
+@YellowPass1 =
+    SELECT VendorID,
+           tpep_pickup_DateTime,
+           tpep_dropoff_DateTime,
+           Passenger_count,
+           Trip_distance,
+           Pickup_longitude,
+           Pickup_latitude,
+           RateCodeID,
+           Store_and_fwd_flag,
+           Dropoff_longitude,
+           Dropoff_latitude,
+           Payment_type,
+           Fare_amount,
+           Extra,
+           MTA_tax,
+           Improvement_surcharge,
+           Tip_amount,
+           Tolls_amount,
+           Total_amount,
+           DateTime.Parse(tpep_pickup_DateTime).ToShortDateString() AS ShortDate
+    FROM @Yellow2016;
+
+@YellowPass2 =
+    SELECT VendorID,
+           tpep_pickup_DateTime,
+           tpep_dropoff_DateTime,
+           Passenger_count,
+           Trip_distance,
+           Pickup_longitude,
+           Pickup_latitude,
+           RateCodeID,
+           Store_and_fwd_flag,
+           Dropoff_longitude,
+           Dropoff_latitude,
+           Payment_type,
+           Fare_amount,
+           Extra,
+           MTA_tax,
+           Improvement_surcharge,
+           Tip_amount,
+           Tolls_amount,
+           Total_amount,
+           DateTime.Parse(tpep_pickup_DateTime).ToShortDateString() AS ShortDate
+    FROM @Yellow2015;
+
+@YellowPass3 =
+    SELECT vendor_id          
+           ,pickup_datetime    
+           ,dropoff_datetime   
+           ,passenger_count    
+           ,trip_distance      
+           ,pickup_longitude   
+           ,pickup_latitude    
+           ,rate_code          
+           ,store_and_fwd_flag 
+           ,dropoff_longitude  
+           ,dropoff_latitude   
+           ,payment_type       
+           ,fare_amount        
+           ,surcharge          
+           ,mta_tax            
+           ,tip_amount         
+           ,tolls_amount       
+           ,total_amount       
+           ,DateTime.Parse(pickup_datetime).ToShortDateString() AS ShortDate
+    FROM @Yellow2014;
+
+@YellowPass4 =
+    SELECT vendor_id          
+           ,pickup_datetime    
+           ,dropoff_datetime   
+           ,passenger_count    
+           ,trip_distance      
+           ,pickup_longitude   
+           ,pickup_latitude    
+           ,rate_code          
+           ,store_and_fwd_flag 
+           ,dropoff_longitude  
+           ,dropoff_latitude   
+           ,payment_type       
+           ,fare_amount        
+           ,surcharge          
+           ,mta_tax            
+           ,tip_amount         
+           ,tolls_amount       
+           ,total_amount       
+           ,DateTime.Parse(pickup_datetime).ToShortDateString() AS ShortDate
+    FROM @Yellow2013;
+
+@YellowPass5 =
+    SELECT vendor_id          
+           ,pickup_datetime    
+           ,dropoff_datetime   
+           ,passenger_count    
+           ,trip_distance      
+           ,pickup_longitude   
+           ,pickup_latitude    
+           ,rate_code          
+           ,store_and_fwd_flag 
+           ,dropoff_longitude  
+           ,dropoff_latitude   
+           ,payment_type       
+           ,fare_amount        
+           ,surcharge          
+           ,mta_tax            
+           ,tip_amount         
+           ,tolls_amount       
+           ,total_amount       
+           ,DateTime.Parse(pickup_datetime).ToShortDateString() AS ShortDate
+    FROM @Yellow2012;
+
+@YellowPass6 =
+    SELECT vendor_id          
+           ,pickup_datetime    
+           ,dropoff_datetime   
+           ,passenger_count    
+           ,trip_distance      
+           ,pickup_longitude   
+           ,pickup_latitude    
+           ,rate_code          
+           ,store_and_fwd_flag 
+           ,dropoff_longitude  
+           ,dropoff_latitude   
+           ,payment_type       
+           ,fare_amount        
+           ,surcharge          
+           ,mta_tax            
+           ,tip_amount         
+           ,tolls_amount       
+           ,total_amount       
+           ,DateTime.Parse(pickup_datetime).ToShortDateString() AS ShortDate
+    FROM @Yellow2011;
+
+@YellowPass7 =
+    SELECT vendor_id          
+           ,pickup_datetime    
+           ,dropoff_datetime   
+           ,passenger_count    
+           ,trip_distance      
+           ,pickup_longitude   
+           ,pickup_latitude    
+           ,rate_code          
+           ,store_and_fwd_flag 
+           ,dropoff_longitude  
+           ,dropoff_latitude   
+           ,payment_type       
+           ,fare_amount        
+           ,surcharge          
+           ,mta_tax            
+           ,tip_amount         
+           ,tolls_amount       
+           ,total_amount       
+           ,DateTime.Parse(pickup_datetime).ToShortDateString() AS ShortDate
+    FROM @Yellow2010;
+
+@YellowPass8 =
+    SELECT vendor_id          
+           ,pickup_datetime    
+           ,dropoff_datetime   
+           ,passenger_count    
+           ,trip_distance      
+           ,pickup_longitude   
+           ,pickup_latitude    
+           ,rate_code          
+           ,store_and_fwd_flag 
+           ,dropoff_longitude  
+           ,dropoff_latitude   
+           ,payment_type       
+           ,fare_amount        
+           ,surcharge          
+           ,mta_tax            
+           ,tip_amount         
+           ,tolls_amount       
+           ,total_amount       
+           ,DateTime.Parse(pickup_datetime).ToShortDateString() AS ShortDate
+    FROM @Yellow2009;
+
+@Result1 = 
+        SELECT
+        VendorID                                                  
+        ,tpep_pickup_DateTime   
+        ,tpep_dropoff_DateTime      
+        ,Passenger_count                    
+        ,Trip_distance                              
+        ,Pickup_longitude       
+        ,Pickup_latitude                       
+        ,RateCodeID                                            
+        ,Store_and_fwd_flag                             
+        ,Dropoff_longitude                 
+        ,Dropoff_latitude                    
+        ,Payment_type                                        
+        ,Fare_amount                                         
+        ,Extra                                                                       
+        ,MTA_tax                                                 
+        ,Improvement_surcharge      
+        ,Tip_amount                                                           
+        ,Tolls_amount                                         
+        ,Total_amount
+        ,DateKey
+FROM @YellowPass1
+LEFT JOIN @DatesPass1 ON ShortDate == ShortDate1; 
+
+@Result2 = 
+        SELECT
+        VendorID                                                  
+        ,tpep_pickup_DateTime   
+        ,tpep_dropoff_DateTime      
+        ,Passenger_count                    
+        ,Trip_distance                              
+        ,Pickup_longitude       
+        ,Pickup_latitude                       
+        ,RateCodeID                                            
+        ,Store_and_fwd_flag                             
+        ,Dropoff_longitude                 
+        ,Dropoff_latitude                    
+        ,Payment_type                                        
+        ,Fare_amount                                         
+        ,Extra                                                                       
+        ,MTA_tax                                                 
+        ,Improvement_surcharge      
+        ,Tip_amount                                                           
+        ,Tolls_amount                                         
+        ,Total_amount
+        ,DateKey
+FROM @YellowPass2
+LEFT JOIN @DatesPass1 ON ShortDate == ShortDate1; 
+
+@Result3 = 
+    SELECT vendor_id          
+        ,pickup_datetime    
+        ,dropoff_datetime   
+        ,passenger_count    
+        ,trip_distance      
+        ,pickup_longitude   
+        ,pickup_latitude    
+        ,rate_code          
+        ,store_and_fwd_flag 
+        ,dropoff_longitude  
+        ,dropoff_latitude   
+        ,payment_type       
+        ,fare_amount        
+        ,surcharge          
+        ,mta_tax            
+        ,tip_amount         
+        ,tolls_amount       
+        ,total_amount 
+        ,DateKey
+FROM @YellowPass3
+LEFT JOIN @DatesPass1 ON ShortDate == ShortDate1; 
+
+@Result4 = 
+    SELECT vendor_id          
+        ,pickup_datetime    
+        ,dropoff_datetime   
+        ,passenger_count    
+        ,trip_distance      
+        ,pickup_longitude   
+        ,pickup_latitude    
+        ,rate_code          
+        ,store_and_fwd_flag 
+        ,dropoff_longitude  
+        ,dropoff_latitude   
+        ,payment_type       
+        ,fare_amount        
+        ,surcharge          
+        ,mta_tax            
+        ,tip_amount         
+        ,tolls_amount       
+        ,total_amount 
+        ,DateKey
+FROM @YellowPass4
+LEFT JOIN @DatesPass1 ON ShortDate == ShortDate1; 
+
+@Result5 = 
+    SELECT vendor_id          
+        ,pickup_datetime    
+        ,dropoff_datetime   
+        ,passenger_count    
+        ,trip_distance      
+        ,pickup_longitude   
+        ,pickup_latitude    
+        ,rate_code          
+        ,store_and_fwd_flag 
+        ,dropoff_longitude  
+        ,dropoff_latitude   
+        ,payment_type       
+        ,fare_amount        
+        ,surcharge          
+        ,mta_tax            
+        ,tip_amount         
+        ,tolls_amount       
+        ,total_amount 
+        ,DateKey
+FROM @YellowPass5
+LEFT JOIN @DatesPass1 ON ShortDate == ShortDate1; 
+
+@Result6 = 
+    SELECT vendor_id          
+        ,pickup_datetime    
+        ,dropoff_datetime   
+        ,passenger_count    
+        ,trip_distance      
+        ,pickup_longitude   
+        ,pickup_latitude    
+        ,rate_code          
+        ,store_and_fwd_flag 
+        ,dropoff_longitude  
+        ,dropoff_latitude   
+        ,payment_type       
+        ,fare_amount        
+        ,surcharge          
+        ,mta_tax            
+        ,tip_amount         
+        ,tolls_amount       
+        ,total_amount 
+        ,DateKey
+FROM @YellowPass6
+LEFT JOIN @DatesPass1 ON ShortDate == ShortDate1; 
+
+@Result7 = 
+    SELECT vendor_id          
+        ,pickup_datetime    
+        ,dropoff_datetime   
+        ,passenger_count    
+        ,trip_distance      
+        ,pickup_longitude   
+        ,pickup_latitude    
+        ,rate_code          
+        ,store_and_fwd_flag 
+        ,dropoff_longitude  
+        ,dropoff_latitude   
+        ,payment_type       
+        ,fare_amount        
+        ,surcharge          
+        ,mta_tax            
+        ,tip_amount         
+        ,tolls_amount       
+        ,total_amount 
+        ,DateKey
+FROM @YellowPass7
+LEFT JOIN @DatesPass1 ON ShortDate == ShortDate1; 
+
+@Result8 = 
+    SELECT vendor_id          
+        ,pickup_datetime    
+        ,dropoff_datetime   
+        ,passenger_count    
+        ,trip_distance      
+        ,pickup_longitude   
+        ,pickup_latitude    
+        ,rate_code          
+        ,store_and_fwd_flag 
+        ,dropoff_longitude  
+        ,dropoff_latitude   
+        ,payment_type       
+        ,fare_amount        
+        ,surcharge          
+        ,mta_tax            
+        ,tip_amount         
+        ,tolls_amount       
+        ,total_amount 
+        ,DateKey
+FROM @YellowPass8
+LEFT JOIN @DatesPass1 ON ShortDate == ShortDate1;
+
+@TotalResult =
+    SELECT VendorID,
+           tpep_pickup_DateTime,
+           tpep_dropoff_DateTime,
+           Passenger_count,
+           Trip_distance,
+           Pickup_longitude,
+           Pickup_latitude,
+           RateCodeID,
+           Store_and_fwd_flag,
+           Dropoff_longitude,
+           Dropoff_latitude,
+           Payment_type,
+           Fare_amount,
+           Improvement_surcharge,
+           MTA_tax,
+           Tip_amount,
+           Tolls_amount,
+           Total_amount,
+           DateKey
+    FROM @Result1
+
+    UNION ALL
+
+    SELECT VendorID,
+           tpep_pickup_DateTime,
+           tpep_dropoff_DateTime,
+           Passenger_count,
+           Trip_distance,
+           Pickup_longitude,
+           Pickup_latitude,
+           RateCodeID,
+           Store_and_fwd_flag,
+           Dropoff_longitude,
+           Dropoff_latitude,
+           Payment_type,
+           Fare_amount,
+           Improvement_surcharge,
+           MTA_tax,
+           Tip_amount,
+           Tolls_amount,
+           Total_amount,
+           DateKey
+    FROM @Result2
+
+    UNION ALL
+
+    SELECT vendor_id,
+           pickup_datetime,
+           dropoff_datetime,
+           passenger_count,
+           trip_distance,
+           pickup_longitude,
+           pickup_latitude,
+           rate_code,
+           store_and_fwd_flag,
+           dropoff_longitude,
+           dropoff_latitude,
+           payment_type,
+           fare_amount,
+           surcharge,
+           mta_tax,
+           tip_amount,
+           tolls_amount,
+           total_amount,
+           DateKey
+    FROM @Result3
+
+    UNION ALL
+
+    SELECT vendor_id,
+           pickup_datetime,
+           dropoff_datetime,
+           passenger_count,
+           trip_distance,
+           pickup_longitude,
+           pickup_latitude,
+           rate_code,
+           store_and_fwd_flag,
+           dropoff_longitude,
+           dropoff_latitude,
+           payment_type,
+           fare_amount,
+           surcharge,
+           mta_tax,
+           tip_amount,
+           tolls_amount,
+           total_amount,
+           DateKey
+    FROM @Result4
+
+    UNION ALL
+
+    SELECT vendor_id,
+           pickup_datetime,
+           dropoff_datetime,
+           passenger_count,
+           trip_distance,
+           pickup_longitude,
+           pickup_latitude,
+           rate_code,
+           store_and_fwd_flag,
+           dropoff_longitude,
+           dropoff_latitude,
+           payment_type,
+           fare_amount,
+           surcharge,
+           mta_tax,
+           tip_amount,
+           tolls_amount,
+           total_amount,
+           DateKey
+    FROM @Result5
+
+    UNION ALL
+
+    SELECT vendor_id,
+           pickup_datetime,
+           dropoff_datetime,
+           passenger_count,
+           trip_distance,
+           pickup_longitude,
+           pickup_latitude,
+           rate_code,
+           store_and_fwd_flag,
+           dropoff_longitude,
+           dropoff_latitude,
+           payment_type,
+           fare_amount,
+           surcharge,
+           mta_tax,
+           tip_amount,
+           tolls_amount,
+           total_amount,
+           DateKey
+    FROM @Result6
+
+    UNION ALL
+
+    SELECT vendor_id,
+           pickup_datetime,
+           dropoff_datetime,
+           passenger_count,
+           trip_distance,
+           pickup_longitude,
+           pickup_latitude,
+           rate_code,
+           store_and_fwd_flag,
+           dropoff_longitude,
+           dropoff_latitude,
+           payment_type,
+           fare_amount,
+           surcharge,
+           mta_tax,
+           tip_amount,
+           tolls_amount,
+           total_amount,
+           DateKey
+    FROM @Result7
+
+    UNION ALL
+
+    SELECT vendor_id,
+           pickup_datetime,
+           dropoff_datetime,
+           passenger_count,
+           trip_distance,
+           pickup_longitude,
+           pickup_latitude,
+           rate_code,
+           store_and_fwd_flag,
+           dropoff_longitude,
+           dropoff_latitude,
+           payment_type,
+           fare_amount,
+           surcharge,
+           mta_tax,
+           tip_amount,
+           tolls_amount,
+           total_amount,
+           DateKey
+    FROM @Result8;
+
+
+OUTPUT @TotalResult
+TO "/Enriched/AllTaxis/YellowTaxisAllYears.csv"
+USING Outputters.Csv();    

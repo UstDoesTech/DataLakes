@@ -1,0 +1,29 @@
+﻿@Weather = 
+      EXTRACT   Station                     string,
+                Station_Name                string,
+                [DateTime]                  int?,
+                Prcp                        int?,
+                Snwd                        int?,
+                Snow                        int?,
+                TMax                        int?,
+                TMin                        int?,
+                Awnd                        int?
+      FROM    "/Raw/Taxis/central_park_weather.csv"
+      USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@result = 
+SELECT Station, 
+        Station_Name,
+        [DateTime],
+        Prcp,
+        Snwd,
+        Snow,
+        TMax,
+        TMin,
+        Awnd,
+        Convert.ToInt32(Convert.ToString([DateTime])) AS Date
+FROM    @Weather;
+
+OUTPUT @result
+TO "/Enriched/AllTaxis/Weather.csv"
+USING Outputters.Csv();

@@ -1,0 +1,39 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>238027f8-1ff8-4ae7-abc3-22e662a93c1c</ProjectGuid>
+    <OutputType>File</OutputType>
+    <AssemblyName>Algebra.xml</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <Name>USQL.Raw</Name>
+    <RootNamespace>USQL.Raw</RootNamespace>
+    <RuntimeVersion>default</RuntimeVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Script Include="GeoJson.ExtractCoordinates.usql" />
+    <Script Include="Taxi.AllTaxis.usql" />
+    <Script Include="Taxi.FhvTaxi.usql" />
+    <Script Include="Taxi.GreenTaxis.usql" />
+    <Script Include="Taxi.TaxiWithDateKey.usql" />
+    <Script Include="Taxi.TaxiWithDateKey_v2.usql" />
+    <Script Include="Taxi.Weather.usql" />
+    <Script Include="Taxi.YellowTaxis.usql" />
+    <Script Include="TaxisWithDateKeyAndBorough.usql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ScriptCode Include="GeoJson.ExtractCoordinates.usql.cs">
+      <DependentUpon>GeoJson.ExtractCoordinates.usql</DependentUpon>
+    </ScriptCode>
+  </ItemGroup>
+  <Import Project="$(AppData)\Microsoft\DataLake\MsBuild\1.0\Usql.targets" />
+</Project>

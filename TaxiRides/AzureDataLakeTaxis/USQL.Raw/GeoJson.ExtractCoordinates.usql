@@ -1,0 +1,107 @@
+﻿//CREATE ASSEMBLY IF NOT EXISTS [Newtonsoft.Json] FROM "assembly/Newtonsoft.Json.dll";
+//CREATE ASSEMBLY IF NOT EXISTS [Microsoft.Analytics.Samples.Formats] FROM "assembly/Microsoft.Analytics.Samples.Formats.dll";
+
+REFERENCE ASSEMBLY [Newtonsoft.Json];
+REFERENCE ASSEMBLY [Microsoft.Analytics.Samples.Formats];
+REFERENCE ASSEMBLY [SqlSpatial];
+
+DECLARE @INPUT_FILE string = @"/Raw/Taxis/NYC_GeoJSON.json";
+
+//Extract the properties property from the Json file as a string.
+
+@json =
+
+    EXTRACT features string
+
+    FROM @INPUT_FILE
+
+    USING new Microsoft.Analytics.Samples.Formats.Json.JsonExtractor();
+
+
+
+@json =
+
+    SELECT features.Replace("\r\n", "") AS features
+
+    FROM @json;
+
+/*
+
+Parse the batters property to extract the id and name values as a SQL.MAP
+
+*/
+
+
+@parsepropertiesandgeometry =
+
+    SELECT 
+           Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(features, "$..properties").Values AS properties_arr,
+
+           Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(features, "$..geometry").Values AS geometry_arr
+
+    FROM @json;
+
+//@features_json = 
+//
+//    SELECT Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(features, "$..properties") AS features_properties_map, 
+//
+//           Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(features, "$..geometry") AS features_geometry_map
+//
+//    FROM @json;
+
+
+/*
+
+Explode the id and type maps to get the values of the Id and type as individual rowsets
+
+*/
+@JsonResult = 
+    SELECT 
+           Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(b_value) ["type"]AS properties,
+
+           Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(t_value) ["type"]AS geometry
+
+    FROM @parsepropertiesandgeometry
+
+         CROSS APPLY
+
+             EXPLODE(properties_arr) AS t(b_value)
+
+         CROSS APPLY
+
+             EXPLODE(geometry_arr) AS T(t_value);
+
+
+//@features_property =
+//
+//    SELECT *
+//
+//    FROM @features_json
+//
+//         CROSS APPLY
+//
+//             EXPLODE(features_properties_map) AS T(BoroCode, BoroName, Shape_Leng, Shape_Area);
+//
+//@features_geometry =
+//
+//    SELECT type,
+//
+//           coordinates
+//
+//    FROM @features_json
+//
+//         CROSS APPLY
+//
+//             EXPLODE(features_geometry_map) AS T(type, coordinates);
+//
+//
+//@geojson = SELECT g.coordinates, f.BoroCode, f.BoroName
+//
+//            FROM @features_geometry AS g
+//
+//            CROSS JOIN @features_property AS f;
+
+
+OUTPUT @JsonResult
+TO "/Raw/GeoJson.csv"
+USING Outputters.Csv();
