@@ -1,0 +1,17 @@
+﻿USE Curated;
+
+@TotalAmountByWeather = 
+    SELECT 
+            (W.Precipitation > 10) ? "Rain" :
+            (W.Snow > 0) ? "Snow" :
+            "Sunny" AS Weather
+            ,SUM(total_amount) AS TotalAmount
+    FROM    Fct.TaxiTrip AS F
+    JOIN    Dim.Weather AS W ON F.DateKey == W.Date
+    GROUP BY (W.Precipitation > 10) ? "Rain" :
+            (W.Snow > 0) ? "Snow" :
+            "Sunny" ;
+
+OUTPUT @TotalAmountByWeather
+TO "/Curated/TotalAmountByWeather.csv"
+USING Outputters.Csv(outputHeader : true);

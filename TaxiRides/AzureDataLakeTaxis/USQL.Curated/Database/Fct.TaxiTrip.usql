@@ -1,0 +1,35 @@
+﻿
+// Generated Code Behind Header
+USE DATABASE Curated;
+
+DROP TABLE IF EXISTS Fct.TaxiTrip;
+CREATE TABLE Fct.TaxiTrip
+(
+                 vendor_id                       int?
+                ,pickup_datetime                 DateTime?
+                ,dropoff_datetime                DateTime?
+                ,passenger_count                 int?
+                ,trip_distance                   decimal?
+                ,pickup_longitude                float?
+                ,pickup_latitude                 float?
+                ,rate_code                       int?
+                ,store_and_fwd_flag              string
+                ,dropoff_longitude               float?
+                ,dropoff_latitude                float?
+                ,payment_type                    int?
+                ,fare_amount                     decimal?
+                ,surcharge                       decimal?
+                ,mta_tax                         decimal?
+                ,tip_amount                      decimal?
+                ,tolls_amount                    decimal?
+                ,total_amount                    decimal?
+                ,DateKey                         int
+                ,CalendarMonth                   int
+    ,INDEX clx_vendorid_paymenttype CLUSTERED(vendor_id, payment_type ASC)
+    PARTITIONED BY (CalendarMonth)
+    DISTRIBUTED BY ROUND ROBIN 
+    INTO 8
+);
+
+// Generated Code Behind Footer
+// Generated Code Behind Footer

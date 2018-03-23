@@ -1,0 +1,12 @@
+﻿USE Curated;
+
+@TotalAmountByMonth = 
+    SELECT 
+            CalendarMonth
+            ,SUM(total_amount) AS TotalAmount
+    FROM    Fct.TaxiTrip
+    GROUP BY CalendarMonth;
+
+OUTPUT @TotalAmountByMonth
+TO "/Curated/TotalAmountByMonth.csv"
+USING Outputters.Csv(outputHeader : true);

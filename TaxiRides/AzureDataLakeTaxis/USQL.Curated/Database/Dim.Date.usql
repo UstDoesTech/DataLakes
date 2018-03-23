@@ -1,0 +1,22 @@
+﻿// Generated Code Behind Header
+USE DATABASE Curated;
+
+DROP TABLE IF EXISTS Dim.Date;
+CREATE TABLE Dim.Date
+        (
+             DateKey        int?
+            ,Date           DateTime?
+            ,DateString     string
+            ,Day            int?
+            ,Month          int?
+            ,Quarter        int?
+            ,Year           int?
+            ,DayOfWeekNo    int?
+            ,DayName        string
+            ,MonthName      string
+            ,FinancialYear  string
+            ,WeekNoOfYear   int?
+            ,INDEX clx_datekey CLUSTERED(DateKey)
+            DISTRIBUTED BY ROUND ROBIN 
+
+        );

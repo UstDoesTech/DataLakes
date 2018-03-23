@@ -1,0 +1,19 @@
+﻿// Generated Code Behind Header
+USE DATABASE Curated;
+
+DROP TABLE IF EXISTS Dim.Weather;
+CREATE TABLE Dim.Weather
+        (
+             Station        string
+            ,Station_Name   string
+            ,Date           int
+            ,Precipitation  int?
+            ,Swnd           int?
+            ,Snow           int?
+            ,MaxTemp        int?
+            ,MinTemp        int?
+            ,Awnd           int?
+            ,INDEX clx_datekey CLUSTERED(Date)
+            DISTRIBUTED BY ROUND ROBIN 
+
+        );

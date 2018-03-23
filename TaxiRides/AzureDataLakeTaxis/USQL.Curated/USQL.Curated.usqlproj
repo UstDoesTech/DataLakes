@@ -1,0 +1,39 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d978301c-e30c-4e20-8d15-71b241f34a15</ProjectGuid>
+    <OutputType>File</OutputType>
+    <AssemblyName>Algebra.xml</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Name>USQL.Curated</Name>
+    <RootNamespace>USQL.Curated</RootNamespace>
+    <RuntimeVersion>default</RuntimeVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Script Include="Curated.CreateDb.usql" />
+    <Script Include="Curated.Fct.TotalAmountByMonth.usql" />
+    <Script Include="Curated.Fct.TotalAmountByWeather.usql" />
+    <Script Include="Curated.Fct.TotalAmountByWeatherAndMonth.usql" />
+    <Script Include="Database\Dim.Date.usql" />
+    <Script Include="Database\Dim.Weather.usql" />
+    <Script Include="Database\Fct.GreenTaxiTrip.usql" />
+    <Script Include="Database\Fct.TaxiTrip.usql" />
+    <Script Include="Security\Dim.usql" />
+    <Script Include="Security\Fct.usql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database" />
+    <Folder Include="Security" />
+  </ItemGroup>
+  <Import Project="$(AppData)\Microsoft\DataLake\MsBuild\1.0\Usql.targets" />
+</Project>
