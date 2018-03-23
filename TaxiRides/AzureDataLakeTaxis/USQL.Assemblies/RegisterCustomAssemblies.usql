@@ -1,0 +1,20 @@
+﻿CREATE DATABASE IF NOT EXISTS master;
+USE DATABASE master;
+
+// Register Custom assemblies
+
+DROP ASSEMBLY IF EXISTS [Newtonsoft.Json];
+CREATE ASSEMBLY IF NOT EXISTS [Newtonsoft.Json] FROM "usqlext/assembly/CustomAssemblies/Newtonsoft.Json.dll";
+
+//DROP ASSEMBLY IF EXISTS [Microsoft.Analytics.Interfaces];
+//CREATE ASSEMBLY IF NOT EXISTS [Microsoft.Analytics.Interfaces] FROM "usqlext/assembly/CustomAssemblies/Microsoft.Analytics.Interfaces.dll";
+
+//DROP ASSEMBLY IF EXISTS [Microsoft.Analytics.Types];
+//CREATE ASSEMBLY IF NOT EXISTS [Microsoft.Analytics.Types] FROM "usqlext/assembly/CustomAssemblies/Microsoft.Analytics.Types.dll";
+
+DROP ASSEMBLY IF EXISTS [Microsoft.Hadoop.Avro];
+CREATE ASSEMBLY IF NOT EXISTS [Microsoft.Hadoop.Avro] FROM "usqlext/assembly/CustomAssemblies/Microsoft.Hadoop.Avro.dll";
+
+DROP ASSEMBLY IF EXISTS [USQL.Assemblies];
+CREATE ASSEMBLY IF NOT EXISTS [USQL.Assemblies] FROM "usqlext/assembly/CustomAssemblies/USQL.Assemblies.dll";
+

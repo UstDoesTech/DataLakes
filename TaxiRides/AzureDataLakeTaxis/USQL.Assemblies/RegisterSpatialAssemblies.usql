@@ -1,0 +1,26 @@
+﻿DECLARE @ASSEMBLY_PATH string = "/assembly/";
+
+DECLARE @SPATIAL_ASM string = @ASSEMBLY_PATH+"Microsoft.SqlServer.Types.dll";
+
+DECLARE @SPATIAL_NATIVEDLL string = @ASSEMBLY_PATH+"SqlServerSpatial130.dll";
+
+
+
+
+USE DATABASE master;
+
+
+
+DROP ASSEMBLY IF EXISTS SqlSpatial;
+
+CREATE ASSEMBLY SqlSpatial
+
+FROM @SPATIAL_ASM
+
+WITH ADDITIONAL_FILES =
+
+     (
+
+         @SPATIAL_NATIVEDLL
+
+     );
