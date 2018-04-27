@@ -1,0 +1,222 @@
+[
+  {
+    "path": "//RAW",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//RAW//Internal",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//RAW//External",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//RAW//Open",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//RAW//Sensitive",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//BASE",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//BASE//Internal",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//BASE//External",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//BASE//Open",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//BASE//Sensitive",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//ENRICHED",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//ENRICHED//Warehouse",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//ENRICHED//Export",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//ENRICHED//Asset",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//CURATED",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//CURATED//Warehouse",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//CURATED//Export",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//CURATED//Asset",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//MODEL",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//LIBRARY",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//LABORATORY",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  },
+  {
+    "path": "//EXHIBIT",
+    "security": [
+      {
+        "Name": "service-principal-name",
+        "Type": "Principal",
+        "Permission": "All"
+      }
+    ]
+  }
+]
