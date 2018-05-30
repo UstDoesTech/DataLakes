@@ -1,13 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <StartFile>Taxi-4-0-CreateDateDimension.usql</StartFile>
+    <StartFile>Taxi-1-0-CreateNycTaxiSchema.usql</StartFile>
     <OutputStreamPath>C:\Users\ujo.ACL\AppData\Local\USQLDataRoot</OutputStreamPath>
   </PropertyGroup>
   <ItemGroup>
+    <ScriptUserData Include="Taxi-1-0-CreateNycTaxiSchema.usql">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>ENRICHED</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+      <ClusterComputeAccount>DataLakeCA:adventureworksadla (UJO@adatis.co.uk)</ClusterComputeAccount>
+      <ClusterDatabase>master</ClusterDatabase>
+      <ClusterSchema>dbo</ClusterSchema>
+    </ScriptUserData>
     <ScriptUserData Include="Taxi-4-0-CreateDateDimension.usql">
       <UseLocalComputeAccount>true</UseLocalComputeAccount>
-      <LocalComputeAccount>LocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
+      <LocalDatabase>master</LocalDatabase>
+      <LocalSchema>dbo</LocalSchema>
+    </ScriptUserData>
+    <ScriptUserData Include="Taxis-4-2-CreatePartitionedTable.usql">
+      <UseLocalComputeAccount>true</UseLocalComputeAccount>
+      <LocalComputeAccount>DataLakeLocalCA:localcomputeaccount</LocalComputeAccount>
       <LocalDatabase>master</LocalDatabase>
       <LocalSchema>dbo</LocalSchema>
     </ScriptUserData>

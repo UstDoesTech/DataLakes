@@ -1,0 +1,152 @@
+﻿CREATE TABLE green_tripdata_staging (
+  vendor_id string?,
+  lpep_pickup_datetime string?,
+  lpep_dropoff_datetime string?,
+  store_and_fwd_flag string?,
+  rate_code_id string?,
+  pickup_longitude decimal?,
+  pickup_latitude decimal?,
+  dropoff_longitude decimal?,
+  dropoff_latitude decimal?,
+  passenger_count string?,
+  trip_distance string?,
+  fare_amount string?,
+  extra string?,
+  mta_tax string?,
+  tip_amount string?,
+  tolls_amount string?,
+  ehail_fee string?,
+  improvement_surcharge string?,
+  total_amount string?,
+  payment_type string?,
+  trip_type string?,
+  pickup_location_id string?,
+  dropoff_location_id string?,
+  junk1 string?,
+  junk2 string?
+);
+/*
+N.B. junk columns are there because some tripdata file headers are
+inconsistent with the actual data, e.g. header says 20 or 21 columns per row,
+but data actually has 22 or 23 columns per row, which COPY doesn't like.
+junk1 and junk2 should always be null
+*/
+
+CREATE TABLE yellow_tripdata_staging (
+  vendor_id string?,
+  tpep_pickup_datetime string?,
+  tpep_dropoff_datetime string?,
+  passenger_count string?,
+  trip_distance string?,
+  pickup_longitude decimal?,
+  pickup_latitude decimal?,
+  rate_code_id string?,
+  store_and_fwd_flag string?,
+  dropoff_longitude decimal?,
+  dropoff_latitude decimal?,
+  payment_type string?,
+  fare_amount string?,
+  extra string?,
+  mta_tax string?,
+  tip_amount string?,
+  tolls_amount string?,
+  improvement_surcharge string?,
+  total_amount string?,
+  pickup_location_id string?,
+  dropoff_location_id string?,
+  junk1 string?,
+  junk2 string?
+);
+
+CREATE TABLE uber_trips_staging (
+  pickup_datetime DateTime?,
+  pickup_latitude decimal?,
+  pickup_longitude decimal?,
+  base_code string?
+);
+
+CREATE TABLE uber_trips_2015 (
+  dispatching_base_num string?,
+  pickup_datetime DateTime?,
+  affiliated_base_num string?,
+  location_id integer,
+  nyct2010_ntacode string?
+);
+
+CREATE TABLE taxi_zone_lookups (
+  borough string?,
+  zone string?,
+  service_zone string?,
+  nyct2010_ntacode string?
+);
+
+CREATE TABLE fhv_trips (
+  dispatching_base_num string?,
+  pickup_datetime DateTime?,
+  dropoff_datetime DateTime?,
+  pickup_location_id int?,
+  dropoff_location_id int?
+);
+
+CREATE TABLE fhv_bases (
+  base_number string?,
+  base_name string?,
+  dba string?,
+  dba_category string?
+);
+
+CREATE INDEX index_fhv_bases_on_dba_category ON fhv_bases (dba_category);
+
+CREATE TABLE cab_types (
+  type string?
+);
+
+INSERT INTO cab_types (type) "yellow";
+INSERT INTO cab_types (type) "green";
+INSERT INTO cab_types (type) "uber";
+
+CREATE TABLE trips (
+  cab_type_id int?,
+  vendor_id string?,
+  pickup_datetime DateTime?,
+  dropoff_datetime DateTime?,
+  store_and_fwd_flag string?,
+  rate_code_id int?,
+  pickup_longitude decimal?,
+  pickup_latitude decimal?,
+  dropoff_longitude decimal?,
+  dropoff_latitude decimal?,
+  passenger_count int?,
+  trip_distance decimal?,
+  fare_amount decimal?,
+  extra decimal?,
+  mta_tax decimal?,
+  tip_amount decimal?,
+  tolls_amount decimal?,
+  ehail_fee decimal?,
+  improvement_surcharge decimal?,
+  total_amount decimal?,
+  payment_type string?,
+  trip_type integer,
+  pickup_nyct2010_gid int?,
+  dropoff_nyct2010_gid int?,
+  pickup_location_id int?,
+  dropoff_location_id int?
+);
+
+SELECT AddGeometryColumn('trips', 'pickup', 4326, 'POINT', 2);
+SELECT AddGeometryColumn('trips', 'dropoff', 4326, 'POINT', 2);
+
+CREATE TABLE central_park_weather_observations (
+  station_id string?,
+  station_name string?,
+  date DateTime?,
+  precipitation decimal?,
+  snow_depth decimal?,
+  snowfall decimal?,
+  max_temperature decimal?,
+  min_temperature decimal?,
+  average_wind_speed decimal?
+);
+
+CREATE UNIQUE INDEX index_weather_observations ON central_park_weather_observations (date);
