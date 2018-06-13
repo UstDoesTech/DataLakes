@@ -1,0 +1,60 @@
+﻿
+@fhv2015 =
+    EXTRACT [Dispatching_base_num] string,
+            [Pickup_date] DateTime,
+            [locationID] string
+    FROM "/RAW/Taxis/2015/fhv_{*}.csv" 
+    USING Extractors.Csv(silent:true,skipFirstNRows:1);
+
+@fhv2016 =
+    EXTRACT [Dispatching_base_num] string,
+            [Pickup_date] DateTime,
+            [locationID] string
+    FROM "/RAW/Taxis/2016/fhv_{*}.csv" 
+    USING Extractors.Csv(silent:true,skipFirstNRows:1);
+
+@fhv2017 =
+    EXTRACT [Dispatching_base_num] string,
+            [Pickup_DateTime] DateTime?,
+            [DropOff_datetime] string,
+            [PUlocationID] int?,
+            [DOlocationID] string
+    FROM "/RAW/Taxis/2017/fhv_{*}.csv" 
+    USING Extractors.Csv(silent:true,skipFirstNRows:1);
+
+CREATE TABLE IF NOT EXISTS dbo.fhv2017
+(
+    INDEX clx_Dispatching_base_num
+    CLUSTERED([Dispatching_base_num] ASC)
+    DISTRIBUTED BY
+    HASH([Dispatching_base_num])
+)
+AS
+SELECT *
+FROM @fhv2017;
+
+@result =
+    SELECT COUNT( * ) AS RowCount
+    FROM @fhv2015
+
+    UNION ALL
+
+    SELECT COUNT( * ) AS RowCount
+    FROM @fhv2016
+
+    UNION ALL 
+    
+    SELECT COUNT(*) AS RowCount
+    FROM dbo.fhv2017;
+
+
+@result =
+    SELECT SUM(RowCount) AS TotalTrips
+    FROM @result;
+
+OUTPUT @result
+TO "/output/TotalTrips_test_USQL.Csv"
+USING Outputters.Csv();
+    
+
+

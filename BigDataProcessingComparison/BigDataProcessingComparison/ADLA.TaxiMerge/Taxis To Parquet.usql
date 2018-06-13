@@ -1,0 +1,416 @@
+﻿SET @@FeaturePreviews = "EnableParquetUdos:on"; // Public Preview
+
+
+@fhv2015 =
+    EXTRACT [Dispatching_base_num] string,
+            [Pickup_date] string,
+            [locationID] string
+    FROM "/RAW/Taxis/2015/fhv_{*}.csv" 
+    USING Extractors.Csv(silent:true,skipFirstNRows:1);
+
+@fhv2016 =
+    EXTRACT [Dispatching_base_num] string,
+            [Pickup_date] string,
+            [locationID] string
+    FROM "/RAW/Taxis/2016/fhv_{*}.csv" 
+    USING Extractors.Csv(silent:true,skipFirstNRows:1);
+
+@fhv2017 =
+    EXTRACT [Dispatching_base_num] string,
+            [Pickup_DateTime] string,
+            [DropOff_datetime] string,
+            [PUlocationID] string,
+            [DOlocationID] string
+    FROM "/RAW/Taxis/2017/fhv_{*}.csv" 
+    USING Extractors.Csv(silent:true,skipFirstNRows:1);
+
+@yellow2009 =
+    EXTRACT [vendor_name] string,
+            [Trip_Pickup_DateTime] string,
+            [Trip_Dropoff_DateTime] string,
+            [Passenger_Count] string,
+            [Trip_Distance] string,
+            [Start_Lon] string,
+            [Start_Lat] string,
+            [Rate_Code] string,
+            [store_and_forward] string,
+            [End_Lon] string,
+            [End_Lat] string,
+            [Payment_Type] string,
+            [Fare_Amt] string,
+            [surcharge] string,
+            [mta_tax] string,
+            [Tip_Amt] string,
+            [Tolls_Amt] string,
+            [Total_Amt] string
+    FROM "/RAW/Taxis/2009/yellow_{*}.csv" 
+    USING Extractors.Csv(silent:true, skipFirstNRows:1);
+
+@yellow2010 =
+    EXTRACT [vendor_id] string,
+            [pickup_datetime] string,
+            [dropoff_datetime] string,
+            [passenger_count] string,
+            [trip_distance] string,
+            [pickup_longitude] string,
+            [pickup_latitude] string,
+            [rate_code] string,
+            [store_and_fwd_flag] string,
+            [dropoff_longitude] string,
+            [dropoff_latitude] string,
+            [payment_type] string,
+            [fare_amount] string,
+            [surcharge] string,
+            [mta_tax] string,
+            [tip_amount] string,
+            [tolls_amount] string,
+            [total_amount] string
+    FROM "/RAW/Taxis/2010/yellow_{*}.csv" 
+    USING Extractors.Csv(silent:true, skipFirstNRows:1);
+
+@yellow2011 =
+    EXTRACT [vendor_id] string,
+            [pickup_datetime] string,
+            [dropoff_datetime] string,
+            [passenger_count] string,
+            [trip_distance] string,
+            [pickup_longitude] string,
+            [pickup_latitude] string,
+            [rate_code] string,
+            [store_and_fwd_flag] string,
+            [dropoff_longitude] string,
+            [dropoff_latitude] string,
+            [payment_type] string,
+            [fare_amount] string,
+            [surcharge] string,
+            [mta_tax] string,
+            [tip_amount] string,
+            [tolls_amount] string,
+            [total_amount] string
+    FROM "/RAW/Taxis/2011/yellow_{*}.csv" 
+    USING Extractors.Csv(silent:true, skipFirstNRows:1);
+
+@yellow2012 =
+    EXTRACT [vendor_id] string,
+            [pickup_datetime] string,
+            [dropoff_datetime] string,
+            [passenger_count] string,
+            [trip_distance] string,
+            [pickup_longitude] string,
+            [pickup_latitude] string,
+            [rate_code] string,
+            [store_and_fwd_flag] string,
+            [dropoff_longitude] string,
+            [dropoff_latitude] string,
+            [payment_type] string,
+            [fare_amount] string,
+            [surcharge] string,
+            [mta_tax] string,
+            [tip_amount] string,
+            [tolls_amount] string,
+            [total_amount] string
+    FROM "/RAW/Taxis/2012/yellow_{*}.csv" 
+    USING Extractors.Csv(silent:true, skipFirstNRows:1);
+
+@yellow2013 =
+    EXTRACT [vendor_id] string,
+            [pickup_datetime] string,
+            [dropoff_datetime] string,
+            [passenger_count] string,
+            [trip_distance] string,
+            [pickup_longitude] string,
+            [pickup_latitude] string,
+            [rate_code] string,
+            [store_and_fwd_flag] string,
+            [dropoff_longitude] string,
+            [dropoff_latitude] string,
+            [payment_type] string,
+            [fare_amount] string,
+            [surcharge] string,
+            [mta_tax] string,
+            [tip_amount] string,
+            [tolls_amount] string,
+            [total_amount] string
+    FROM "/RAW/Taxis/2013/yellow_{*}.csv" 
+    USING Extractors.Csv(silent:true, skipFirstNRows:1);
+
+@yellow2014 =
+    EXTRACT [vendor_id] string,
+            [ pickup_datetime] string,
+            [ dropoff_datetime] string,
+            [ passenger_count] string,
+            [ trip_distance] string,
+            [ pickup_longitude] string,
+            [ pickup_latitude] string,
+            [ rate_code] string,
+            [ store_and_fwd_flag] string,
+            [ dropoff_longitude] string,
+            [ dropoff_latitude] string,
+            [ payment_type] string,
+            [ fare_amount] string,
+            [ surcharge] string,
+            [ mta_tax] string,
+            [ tip_amount] string,
+            [ tolls_amount] string,
+            [ total_amount] string
+    FROM "/RAW/Taxis/2014/yellow_{*}.csv" 
+    USING Extractors.Csv(silent:true, skipFirstNRows:1);
+
+@yellow2015 =
+    EXTRACT [VendorID] string,
+            [tpep_pickup_datetime] string,
+            [tpep_dropoff_datetime] string,
+            [passenger_count] string,
+            [trip_distance] string,
+            [pickup_longitude] string,
+            [pickup_latitude] string,
+            [RateCodeID] string,
+            [store_and_fwd_flag] string,
+            [dropoff_longitude] string,
+            [dropoff_latitude] string,
+            [payment_type] string,
+            [fare_amount] string,
+            [extra] string,
+            [mta_tax] string,
+            [tip_amount] string,
+            [tolls_amount] string,
+            [improvement_surcharge] string,
+            [total_amount] string
+    FROM "/RAW/Taxis/2015/yellow_{*}.csv" 
+    USING Extractors.Csv(silent:true, skipFirstNRows:1);
+
+@yellow2016 =
+    EXTRACT [VendorID] string,
+            [tpep_pickup_datetime] string,
+            [tpep_dropoff_datetime] string,
+            [passenger_count] string,
+            [trip_distance] string,
+            [pickup_longitude] string,
+            [pickup_latitude] string,
+            [RatecodeID] string,
+            [store_and_fwd_flag] string,
+            [dropoff_longitude] string,
+            [dropoff_latitude] string,
+            [payment_type] string,
+            [fare_amount] string,
+            [extra] string,
+            [mta_tax] string,
+            [tip_amount] string,
+            [tolls_amount] string,
+            [improvement_surcharge] string,
+            [total_amount] string
+    FROM "/RAW/Taxis/2016/yellow_{*}.csv" 
+    USING Extractors.Csv(silent:true, skipFirstNRows:1);
+
+@yellow2017 =
+    EXTRACT [VendorID] string,
+            [tpep_pickup_datetime] string,
+            [tpep_dropoff_datetime] string,
+            [passenger_count] string,
+            [trip_distance] string,
+            [RatecodeID] string,
+            [store_and_fwd_flag] string,
+            [PULocationID] string,
+            [DOLocationID] string,
+            [payment_type] string,
+            [fare_amount] string,
+            [extra] string,
+            [mta_tax] string,
+            [tip_amount] string,
+            [tolls_amount] string,
+            [improvement_surcharge] string,
+            [total_amount] string	
+	FROM "/RAW/Taxis/2017/yellow_{*}.csv"
+	USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@green2013 =
+    EXTRACT [VendorID] string,
+            [lpep_pickup_datetime] string,
+            [Lpep_dropoff_datetime] string,
+            [Store_and_fwd_flag] string,
+            [RateCodeID] string,
+            [Pickup_longitude] string,
+            [Pickup_latitude] string,
+            [Dropoff_longitude] string,
+            [Dropoff_latitude] string,
+            [Passenger_count] string,
+            [Trip_distance] string,
+            [Fare_amount] string,
+            [Extra] string,
+            [MTA_tax] string,
+            [Tip_amount] string,
+            [Tolls_amount] string,
+            [Ehail_fee] string,
+            [Total_amount] string,
+            [Payment_type] string,
+            [Trip_type ] string
+    FROM "/RAW/Taxis/2013/green_{*}.csv"
+	USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@green2014 =
+    EXTRACT [VendorID] string,
+            [lpep_pickup_datetime] string,
+            [Lpep_dropoff_datetime] string,
+            [Store_and_fwd_flag] string,
+            [RateCodeID] string,
+            [Pickup_longitude] string,
+            [Pickup_latitude] string,
+            [Dropoff_longitude] string,
+            [Dropoff_latitude] string,
+            [Passenger_count] string,
+            [Trip_distance] string,
+            [Fare_amount] string,
+            [Extra] string,
+            [MTA_tax] string,
+            [Tip_amount] string,
+            [Tolls_amount] string,
+            [Ehail_fee] string,
+            [Total_amount] string,
+            [Payment_type] string,
+            [Trip_type ] string
+    FROM "/RAW/Taxis/2014/green_{*}.csv"
+	USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@green2015 =
+    EXTRACT [VendorID] string,
+            [lpep_pickup_datetime] string,
+            [Lpep_dropoff_datetime] string,
+            [Store_and_fwd_flag] string,
+            [RateCodeID] string,
+            [Pickup_longitude] string,
+            [Pickup_latitude] string,
+            [Dropoff_longitude] string,
+            [Dropoff_latitude] string,
+            [Passenger_count] string,
+            [Trip_distance] string,
+            [Fare_amount] string,
+            [Extra] string,
+            [MTA_tax] string,
+            [Tip_amount] string,
+            [Tolls_amount] string,
+            [Ehail_fee] string,
+            [improvement_surcharge] string,
+            [Total_amount] string,
+            [Payment_type] string,
+            [Trip_type ] string
+    FROM "/RAW/Taxis/2015/green_{*}.csv"
+	USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@green2016 =
+    EXTRACT [VendorID] string,
+            [lpep_pickup_datetime] string,
+            [Lpep_dropoff_datetime] string,
+            [Store_and_fwd_flag] string,
+            [RateCodeID] string,
+            [Pickup_longitude] string,
+            [Pickup_latitude] string,
+            [Dropoff_longitude] string,
+            [Dropoff_latitude] string,
+            [Passenger_count] string,
+            [Trip_distance] string,
+            [Fare_amount] string,
+            [Extra] string,
+            [MTA_tax] string,
+            [Tip_amount] string,
+            [Tolls_amount] string,
+            [Ehail_fee] string,
+            [improvement_surcharge] string,
+            [Total_amount] string,
+            [Payment_type] string,
+            [Trip_type ] string
+    FROM "/RAW/Taxis/2016/green_{*}.csv"
+	USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@green2017 =
+    EXTRACT [VendorID] string,
+            [lpep_pickup_datetime] string,
+            [lpep_dropoff_datetime] string,
+            [store_and_fwd_flag] string,
+            [RatecodeID] string,
+            [PULocationID] string,
+            [DOLocationID] string,
+            [passenger_count] string,
+            [trip_distance] string,
+            [fare_amount] string,
+            [extra] string,
+            [mta_tax] string,
+            [tip_amount] string,
+            [tolls_amount] string,
+            [ehail_fee] string,
+            [improvement_surcharge] string,
+            [total_amount] string,
+            [payment_type] string,
+            [trip_type] string
+	    FROM "/RAW/Taxis/2017/green_{*}.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+
+OUTPUT @fhv2015
+TO "/mnt/scala/fhv2015.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @fhv2016
+TO "/mnt/scala/fhv2016.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @fhv2017
+TO "/mnt/scala/fhv2017.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @green2013
+TO "/mnt/scala/green2013.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @green2014
+TO "/mnt/scala/green2014.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @green2015
+TO "/mnt/scala/green2015.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @green2016
+TO "/mnt/scala/green2016.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @green2017
+TO "/mnt/scala/green2017.parquet"
+USING Outputters.Parquet();
+    
+OUTPUT @yellow2009
+TO "/mnt/scala/yellow2009.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @yellow2010
+TO "/mnt/scala/yellow2010.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @yellow2011
+TO "/mnt/scala/yellow2011.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @yellow2012
+TO "/mnt/scala/yellow2012.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @yellow2013
+TO "/mnt/scala/yellow2013.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @yellow2014
+TO "/mnt/scala/yellow2014.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @yellow2015
+TO "/mnt/scala/yellow2015.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @yellow2016
+TO "/mnt/scala/yellow2016.parquet"
+USING Outputters.Parquet();
+
+OUTPUT @yellow2017
+TO "/mnt/scala/yellow2017.parquet"
+USING Outputters.Parquet();
+
+

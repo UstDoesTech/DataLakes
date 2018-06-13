@@ -1,0 +1,80 @@
+﻿
+
+@fhv =
+    EXTRACT [Dispatching_base_num] string,
+            [Pickup_DateTime] DateTime?,
+            [DropOff_datetime] string,
+            [PUlocationID] int?,
+            [DOlocationID] string
+    FROM "/RAW/Taxis/2017/fhv_{*}.csv" 
+    USING Extractors.Csv(silent:true,skipFirstNRows:1);
+
+@yellow =
+    EXTRACT [VendorID] int?,
+            [tpep_pickup_datetime] DateTime,
+            [tpep_dropoff_datetime] DateTime,
+            [passenger_count] int?,
+            [trip_distance] double?,
+            [RatecodeID] int?,
+            [store_and_fwd_flag] string,
+            [PULocationID] int?,
+            [DOLocationID] int?,
+            [payment_type] int?,
+            [fare_amount] int?,
+            [extra] double?,
+            [mta_tax] double?,
+            [tip_amount] int?,
+            [tolls_amount] int?,
+            [improvement_surcharge] double?,
+            [total_amount] double?	
+	    FROM "/RAW/Taxis/2017/yellow_{*}.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+@green =
+    EXTRACT [VendorID] int?,
+            [lpep_pickup_datetime] DateTime?,
+            [lpep_dropoff_datetime] DateTime?,
+            [store_and_fwd_flag] string,
+            [RatecodeID] int?,
+            [PULocationID] int?,
+            [DOLocationID] int?,
+            [passenger_count] int?,
+            [trip_distance] double?,
+            [fare_amount] double?,
+            [extra] double?,
+            [mta_tax] double?,
+            [tip_amount] int?,
+            [tolls_amount] int?,
+            [ehail_fee] string,
+            [improvement_surcharge] double?,
+            [total_amount] double?,
+            [payment_type] int?,
+            [trip_type] int?
+	    FROM "/RAW/Taxis/2017/green_{*}.csv"
+	    USING Extractors.Csv(silent:true, skipFirstNRows: 1);
+
+
+@result =
+    SELECT COUNT( * ) AS RowCount
+    FROM @fhv
+
+    UNION ALL
+
+    SELECT COUNT( * ) AS RowCount
+    FROM @yellow
+         
+    UNION ALL 
+    
+    SELECT COUNT(*) AS RowCount
+    FROM @green;
+
+@result =
+    SELECT SUM(RowCount) AS TotalTrips
+    FROM @result;
+
+OUTPUT @result
+TO "/output/TotalTrips_USQL.Csv"
+USING Outputters.Csv();
+    
+
+

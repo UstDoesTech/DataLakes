@@ -20,9 +20,13 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Script Include="Script.usql" />
-    <ScriptCode Include="Script.usql.cs">
-      <DependentUpon>Script.usql</DependentUpon>
+    <Script Include="Total Trips All Time.usql" />
+    <Script Include="Total Trips 2017.usql" />
+    <ScriptCode Include="Total Trips All Time.usql.cs">
+      <DependentUpon>Total Trips All Time.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Total Trips 2017.usql.cs">
+      <DependentUpon>Total Trips 2017.usql</DependentUpon>
     </ScriptCode>
   </ItemGroup>
   <!-- check for SDK Build target in current path then in USQLSDKPath in the case of command line build -->
